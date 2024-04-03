@@ -1,6 +1,6 @@
-DATA_ROOT=/HDD/Dataset_processed
-TRAIN_SET=$DATA_ROOT/VIVID_256
-GPU_ID=2
+DATA_ROOT=/media/alex/Kingston/phd/data
+TRAIN_SET=$DATA_ROOT/KAIST_VIVID_256
+GPU_ID=0
 
 CUDA_VISIBLE_DEVICES=${GPU_ID} \
 python train.py $TRAIN_SET \
@@ -14,5 +14,6 @@ python train.py $TRAIN_SET \
 --with-pretrain 1 \
 --rearrange-bin 30 \
 --clahe-clip 2.0 \
+--batch-size 8 \
 --log-output \
 --name T_vivid_resnet18_outdoor
